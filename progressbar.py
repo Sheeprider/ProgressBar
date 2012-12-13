@@ -6,13 +6,13 @@ import sys
 
 class ProgressBar(object):
     """docstring for ProgressBar"""
-    def __init__(self, done, totalSize, filelike=sys.stdout):
+    def __init__(self, totalSize, done=0, filelike=sys.stdout,
+            progressBarWidth=40, progressBarChars=('☐', '☒')):
         self.done = done
         self.totalSize = totalSize
         self.filelike = filelike
-        self.progressBarWidth = 40
-        self.progressBarChars = ['☐', '☒']
-        # self.percent = float(done) / float(totalSize)
+        self.progressBarWidth = progressBarWidth
+        self.progressBarChars = progressBarChars
 
         self.progress(done)
 
